@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+
+	"./encodeprac"
 )
 
 // Users represents a collection of users
@@ -33,6 +35,9 @@ func main() {
 	}
 
 	defer jsonFile.Close()
+
+	eB := encodeprac.CreateAlbum("Early Bird", "Larry June")
+	eB.CreateJSON()
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
